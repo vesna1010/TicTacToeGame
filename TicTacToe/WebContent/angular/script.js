@@ -101,7 +101,7 @@ app.factory("myFactory", function() {
             var i, j, endGame=true;
             
             for( i=0; i<3; i++){
-				for(var j=0; j<3; j++){
+				for(j=0; j<3; j++){
 					if(obj[''+i+j]==""){
 						endGame=false;
 					}
