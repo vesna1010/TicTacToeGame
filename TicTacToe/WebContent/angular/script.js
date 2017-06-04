@@ -5,7 +5,8 @@ app.factory("myFactory", function() {
 	return {
 	
 		newGame: function(obj){
-			for(var i=0; i<3; i++){
+			var i, j;
+			for( i=0; i<3; i++){
 				for(var j=0; j<3; j++){
 					key=""+i+j;
 					obj[key]="";
@@ -23,11 +24,11 @@ app.factory("myFactory", function() {
 		
 		addO : function(obj){
 			
-			var added=false;
+			var i, j, added=false;
 			
 			//computer tries to win
-			for(var i=0; i<3; i++){
-				for(var j=0; j<3; j++){
+			for( i=0; i<3; i++){
+				for(j=0; j<3; j++){
 					key=""+i+j;
 					if(obj[key] == ""){
 						obj[key] = "O";
@@ -43,8 +44,8 @@ app.factory("myFactory", function() {
 			
 			//computer prevents victory opponents
 			if(!added){
-				for(var i=0; i<3; i++){
-					for(var j=0; j<3; j++){
+				for( i=0; i<3; i++){
+					for(j=0; j<3; j++){
 						key=""+i+j;
 						if(obj[key] == ""){
 							obj[key] = "X";
@@ -78,7 +79,8 @@ app.factory("myFactory", function() {
 
 		
 		checkWinner : function(obj, s) {
-			for(var i=0; i<3; i++){
+			var i;
+			for( i=0; i<3; i++){
 				if (obj["" + i + 0] == s && obj["" + i + 1] == s && obj["" + i + 2] == s) {
 					return true;
 				}
@@ -96,9 +98,9 @@ app.factory("myFactory", function() {
 		},
 		
 		isEndGame:function(obj){
-            var endGame=true;
+            var i, j, endGame=true;
             
-            for(var i=0; i<3; i++){
+            for( i=0; i<3; i++){
 				for(var j=0; j<3; j++){
 					if(obj[''+i+j]==""){
 						endGame=false;
