@@ -7,7 +7,7 @@ app.factory("myFactory", function() {
 		newGame: function(obj){
 			var i, j;
 			for( i=0; i<3; i++){
-				for(var j=0; j<3; j++){
+				for(j=0; j<3; j++){
 					key=""+i+j;
 					obj[key]="";
 				}
