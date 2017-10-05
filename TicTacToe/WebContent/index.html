@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src="js/factory.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="TicTacToeController">
+	<h1>{{message}}</h1>
+	<div class="table">
+		<div ng-repeat="i in [0, 1, 2]" class="row">
+			<div ng-repeat="j in [0, 1, 2]" class="cell" ng-init="key = ''+i+j;"
+				ng-click="play(key)">{{game[key]}}</div>
+		</div>
+	</div>
+	<br>
+	<div class="div">
+		<button class="button" onclick="location.href='/TicTacToe/'">New
+			Game</button>
+	</div>
+</body>
+</html>
